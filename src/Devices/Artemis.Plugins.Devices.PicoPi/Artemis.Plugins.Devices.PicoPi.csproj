@@ -3,20 +3,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <Platforms>x64</Platforms>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HidSharp" Version="2.1.0" />
-    <PackageReference Include="RGB.NET.Core" Version="1.0.0" />
-    <PackageReference Include="Serilog" />
-
-    <!--All packages Artemis already references are compile-only dependencies-->
-    <PackageReference Update="@(PackageReference)" IncludeAssets="compile;build" />
-    <PackageReference Update="RGB.NET.Core" Version="2.0.0-prerelease.17" />
-    <PackageReference Update="Serilog" Version="2.11.0" />
+    <PackageReference Include="ArtemisRGB.UI.Shared" IncludeAssets="compile;build;buildTransitive" Version="1.2023.306.3" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="LibUsbDotNet" Version="3.0.87-alpha" />
     <PackageReference Include="RGB.NET.Devices.PicoPi" Version="2.0.0-prerelease.17" />
@@ -25,11 +17,5 @@
   <ItemGroup>
     <Content Include="plugin.json" CopyToOutputDirectory="PreserveNewest" />
     <PackageReference Include="ArtemisRGB.Plugins.BuildTask" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Artemis.Core">
-      <HintPath>..\..\..\..\Artemis\src\Artemis.Core\bin\net6.0\Artemis.Core.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>
